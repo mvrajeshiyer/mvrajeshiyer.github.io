@@ -5,20 +5,94 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rajesh M Venkatesan</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; background: #f5f5f5; color: #333; }
-    header { background: #222; color: #fff; padding: 20px; text-align: center; }
-    a { color: #0077b5; text-decoration: none; }
-    .container { max-width: 800px; margin: auto; padding: 20px; }
-    .card { background: #fff; padding: 15px; margin-bottom: 15px; border-radius: 8px; }
-    .links a { margin-right: 15px; }
-    textarea { width: 100%; height: 100px; }
-    button { padding: 8px 12px; margin-top: 5px; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      margin: 0;
+      background: #fafafa;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px 20px;
+      border-bottom: 1px solid #eee;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 28px;
+      font-weight: 600;
+    }
+
+    p.subtitle {
+      color: #666;
+      margin-top: 8px;
+      font-size: 14px;
+    }
+
+    .links {
+      margin-top: 15px;
+    }
+
+    .links a {
+      margin: 0 10px;
+      color: #0073b1;
+      font-size: 14px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .section {
+      margin-bottom: 30px;
+    }
+
+    .section h2 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 5px;
+    }
+
+    .card {
+      background: #fff;
+      padding: 15px;
+      border-radius: 6px;
+      border: 1px solid #eee;
+    }
+
+    ul {
+      padding-left: 18px;
+    }
+
+    .resume a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 12px;
+      border: 1px solid #0073b1;
+      border-radius: 4px;
+      color: #0073b1;
+      font-size: 14px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 12px;
+      color: #888;
+    }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>Your Name</h1>
-    <p>Short bio from LinkedIn</p>
+    <h1>Rajesh M Venkatesan</h1>
+    <p class="subtitle">Staff Data Architect | Distributed Systems | AI Systems</p>
+
     <div class="links">
       <a href="https://github.com/mvrajeshiyer" target="_blank">GitHub</a>
       <a href="https://www.linkedin.com/in/mvrajeshiyer" target="_blank">LinkedIn</a>
@@ -27,70 +101,47 @@
   </header>
 
   <div class="container">
-    <div class="card">
+
+    <div class="section">
       <h2>About</h2>
-      <p>I design and scale data platforms and distributed systems that handle real-world complexity - high volume, low latency, and cost constraints.
- 
-Over the last 14+ years, I’ve:
- 
-* Led a 1PB data warehouse migration to Snowflake/GCP (50% cost reduction, zero downtime) 
-* Built systems processing 100M+ events/day and 10TB/day pipelines 
-* Designed observability platforms with sub-100ms latency at scale 
- 
-I specialize in:
- 
-* Data platform architecture and large-scale migrations 
-* Distributed systems and real-time data pipelines 
-* Observability and performance engineering 
-* Production-grade AI systems (RAG, LLM, AI Agent integrations) 
- 
-Currently working on observability and agentic data management systems at Acceldata for enterprise customers.
- 
-Looking for: Staff / Principal Architect roles where I can define platform architecture, drive system design decisions, and enable teams to build at scale.
+      <div class="card">
+        <p>
+          I design and scale data platforms and distributed systems that handle real-world complexity — high volume, low latency, and cost constraints.
+        </p>
 
-Top skills
+        <ul>
+          <li>Led a 1PB data warehouse migration to Snowflake/GCP (50% cost reduction, zero downtime)</li>
+          <li>Built systems processing 100M+ events/day and 10TB/day pipelines</li>
+          <li>Designed observability platforms with sub-100ms latency at scale</li>
+        </ul>
 
-Data Architecture • System Architecture • Distributed Systems • Large Language Models (LLM) • Engineering Leadership
-</p>
+        <p><strong>Specialization:</strong></p>
+        <ul>
+          <li>Data platform architecture & large-scale migrations</li>
+          <li>Distributed systems & real-time pipelines</li>
+          <li>Observability & performance engineering</li>
+          <li>AI systems (RAG, LLM, agent integrations)</li>
+        </ul>
+
+        <p>
+          Currently building observability and agentic data systems at Acceldata for enterprise-scale workloads.
+        </p>
+      </div>
     </div>
 
-    <div class="card">
-      <h2>My Posts</h2>
-      <div id="posts"></div>
+    <div class="section resume">
+      <h2>Resume</h2>
+      <div class="card">
+        <p>Download my latest resume:</p>
+        <a href="Rajesh_M_Venkatesan_Resume.pdf" target="_blank">Download PDF</a>
+      </div>
     </div>
 
-    <div class="card">
-      <h2>Add Private Post</h2>
-      <textarea id="postInput" placeholder="Write something..."></textarea>
-      <button onclick="addPost()">Add Post</button>
-    </div>
   </div>
 
-  <script>
-    let posts = JSON.parse(localStorage.getItem('posts') || '[]');
+  <footer>
+    © 2026 Rajesh M Venkatesan
+  </footer>
 
-    function renderPosts() {
-      const container = document.getElementById('posts');
-      container.innerHTML = '';
-      posts.forEach(p => {
-        const div = document.createElement('div');
-        div.className = 'card';
-        div.innerText = p;
-        container.appendChild(div);
-      });
-    }
-
-    function addPost() {
-      const input = document.getElementById('postInput');
-      if (input.value.trim()) {
-        posts.unshift(input.value);
-        localStorage.setItem('posts', JSON.stringify(posts));
-        input.value = '';
-        renderPosts();
-      }
-    }
-
-    renderPosts();
-  </script>
 </body>
 </html>
