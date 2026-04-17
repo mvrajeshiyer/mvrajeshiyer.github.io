@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Name</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background: #f5f5f5; color: #333; }
+    header { background: #222; color: #fff; padding: 20px; text-align: center; }
+    a { color: #0077b5; text-decoration: none; }
+    .container { max-width: 800px; margin: auto; padding: 20px; }
+    .card { background: #fff; padding: 15px; margin-bottom: 15px; border-radius: 8px; }
+    .links a { margin-right: 15px; }
+    textarea { width: 100%; height: 100px; }
+    button { padding: 8px 12px; margin-top: 5px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Your Name</h1>
+    <p>Short bio from LinkedIn</p>
+    <div class="links">
+      <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+      <a href="https://twitter.com/yourhandle" target="_blank">Twitter</a>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="card">
+      <h2>About</h2>
+      <p>Paste your LinkedIn summary here.</p>
+    </div>
+
+    <div class="card">
+      <h2>My Posts</h2>
+      <div id="posts"></div>
+    </div>
+
+    <div class="card">
+      <h2>Add Private Post</h2>
+      <textarea id="postInput" placeholder="Write something..."></textarea>
+      <button onclick="addPost()">Add Post</button>
+    </div>
+  </div>
+
+  <script>
+    let posts = JSON.parse(localStorage.getItem('posts') || '[]');
+
+    function renderPosts() {
+      const container = document.getElementById('posts');
+      container.innerHTML = '';
+      posts.forEach(p => {
+        const div = document.createElement('div');
+        div.className = 'card';
+        div.innerText = p;
+        container.appendChild(div);
+      });
+    }
+
+    function addPost() {
+      const input = document.getElementById('postInput');
+      if (input.value.trim()) {
+        posts.unshift(input.value);
+        localStorage.setItem('posts', JSON.stringify(posts));
+        input.value = '';
+        renderPosts();
+      }
+    }
+
+    renderPosts();
+  </script>
+</body>
+</html>
