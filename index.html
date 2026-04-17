@@ -5,83 +5,109 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rajesh M Venkatesan</title>
   <style>
+    :root {
+      --text: #222;
+      --muted: #666;
+      --border: #eee;
+      --bg: #fafafa;
+      --card: #ffffff;
+      --accent: #0a66c2; /* subtle LinkedIn blue */
+    }
+
+    * { box-sizing: border-box; }
+
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
       margin: 0;
-      background: #fafafa;
-      color: #222;
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.6;
     }
 
     header {
       text-align: center;
-      padding: 40px 20px 20px;
-      border-bottom: 1px solid #eee;
+      padding: 32px 16px 16px;
+      border-bottom: 1px solid var(--border);
+      background: #fff;
+    }
+
+    .profile-img {
+      width: 80px;            /* smaller */
+      height: 80px;           /* smaller */
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 12px;
+      border: 1px solid var(--border);
     }
 
     h1 {
       margin: 0;
-      font-size: 28px;
+      font-size: 24px;
       font-weight: 600;
+      letter-spacing: 0.2px;
     }
 
     p.subtitle {
-      color: #666;
-      margin-top: 8px;
-      font-size: 14px;
+      color: var(--muted);
+      margin-top: 6px;
+      font-size: 13px;
     }
 
-    .links {
-      margin-top: 15px;
-    }
+    .links { margin-top: 12px; }
 
     .links a {
-      margin: 0 10px;
-      color: #0073b1;
-      font-size: 14px;
+      margin: 0 8px;
+      color: var(--accent);
+      font-size: 13px;
     }
 
     .container {
-      max-width: 800px;
-      margin: auto;
-      padding: 20px;
+      max-width: 760px; /* slightly tighter */
+      margin: 0 auto;
+      padding: 20px 16px;
     }
 
-    .section {
-      margin-bottom: 30px;
-    }
+    .section { margin-bottom: 24px; }
 
     .section h2 {
-      font-size: 18px;
-      margin-bottom: 10px;
-      border-bottom: 1px solid #eee;
-      padding-bottom: 5px;
+      font-size: 16px;
+      margin: 0 0 8px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 6px;
+      color: #111;
     }
 
     .card {
-      background: #fff;
-      padding: 15px;
+      background: var(--card);
+      padding: 14px;
       border-radius: 6px;
-      border: 1px solid #eee;
+      border: 1px solid var(--border);
     }
 
+    p { margin: 0 0 10px; }
+
     ul {
+      margin: 6px 0 10px;
       padding-left: 18px;
     }
 
+    li { margin-bottom: 6px; }
+
     .resume a {
       display: inline-block;
-      margin-top: 10px;
-      padding: 8px 12px;
-      border: 1px solid #0073b1;
+      margin-top: 8px;
+      padding: 6px 10px;
+      border: 1px solid var(--accent);
       border-radius: 4px;
-      color: #0073b1;
-      font-size: 14px;
+      color: var(--accent);
+      font-size: 13px;
     }
+
+    .resume a:hover { background: rgba(10,102,194,0.06); }
 
     footer {
       text-align: center;
-      padding: 20px;
+      padding: 16px;
       font-size: 12px;
       color: #888;
     }
